@@ -7,6 +7,7 @@ Thingsboard UI built with latest Angular 8.
 - Install Node.js (and npm)
 - Clone the project
 - cd into project directory
+- `npm install` to install dependencies
 - Then run:
   - `ng serve` for a dev server.
   > Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
