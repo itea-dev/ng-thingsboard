@@ -2,6 +2,10 @@
 
 Thingsboard UI built with latest Angular 8.
 
+
+![Screenshot 1](login-page.png)
+
+
 ## Prerequisites
 
 - Install Node.js (and npm)
