@@ -82,7 +82,6 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    ScrollingModule,
     MatSidenavModule
   ]
 })
