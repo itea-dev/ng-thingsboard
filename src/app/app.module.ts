@@ -15,6 +15,18 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
+import { HttpClientModule } from '@angular/common/http';
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+
+
+export function jwtOptionsFactory() {
+  return {
+    tokenGetter: () => {
+      return localStorage.getItem('access_token');
+    },
+    whitelistedDomains: ['demo.thingsboard.io', 'cloud.thingsboard.io', 'localhost:4200']
+  };
+}
 
 @NgModule({
   declarations: [
@@ -33,6 +45,13 @@ import { SharedModule } from './shared/shared.module';
     ScrollingModule,
     LayoutModule,
     FlexLayoutModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      jwtOptionsProvider: {
+        provide: JWT_OPTIONS,
+        useFactory: jwtOptionsFactory,
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
