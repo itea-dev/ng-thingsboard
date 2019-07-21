@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+  </div>
+
+  <div>
+    <a routerLink="/home">{{title}}</a>
+  </div>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" width="4">
+    <button mat-menu-item routerLink="/profile">
+      <mat-icon>account_circle</mat-icon>
+      <span>Profile</span>
+    </button>
+    <button (click)="logout()" mat-menu-item>
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
