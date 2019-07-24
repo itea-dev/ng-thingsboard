@@ -1,1 +1,30 @@
-<p>login works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-form-field>
+        <input matInput formControlName="username" placeholder="Username" name="username" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input *ngIf="hide" matInput formControlName="password" placeholder="Password" type="password" name="password"
+          required>
+        <input *ngIf="!hide" matInput formControlName="password" placeholder="Password" type="text" name="password"
+          required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+    </form>
+
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <span>Don't have an account? Create one now!</span>
+    <button mat-raised-button (click)="register()">Register</button>
+  </mat-card-actions>
+</mat-card>
