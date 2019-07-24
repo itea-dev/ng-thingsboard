@@ -1,6 +1,6 @@
 # NgThingsboard
 
-Thingsboard UI built with latest Angular 8.
+The goal of this project is to create an alternative pwa for the Thingsboard IoT platform using the latest Angular 8.
 
 
 ![Screenshot 1](login-page.png)
@@ -13,8 +13,9 @@ Thingsboard UI built with latest Angular 8.
 - cd into project directory
 - `npm install` to install dependencies
 - Then run:
-  - `ng serve` for a dev server.
+  - `ng serve` for running the app in a local dev server.
   > Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-  - `ng build` to build the project.
-  > The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+  - `ng build --prod` to build the project.
+  > The build artifacts will be stored in the `dist/` directory.
+  
