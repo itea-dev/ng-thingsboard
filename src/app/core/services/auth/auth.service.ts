@@ -42,7 +42,7 @@ export class AuthService {
   }
 
   register(credentials) {
-    return this.http.post(`${this.url}/api/noauth/signup`, credentials).pipe(
+    return this.http.post(`${this.url}/noauth/signup`, credentials).pipe(
       catchError(e => {
         console.error('Auth service register error: ' + e.error.msg);
         throw new Error(e);
@@ -51,7 +51,7 @@ export class AuthService {
   }
 
   login(credentials) {
-    return this.http.post(`${this.url}/api/auth/login`, credentials)
+    return this.http.post(`${this.url}/auth/login`, credentials)
       .pipe(
         tap(res => {
           localStorage.setItem(TOKEN_KEY, res['token']);

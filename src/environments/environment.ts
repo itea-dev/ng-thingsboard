@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://demo.thingsboard.io/api/'
+  apiUrl: 'http://demo.thingsboard.io/api'
 };
 
 /*
