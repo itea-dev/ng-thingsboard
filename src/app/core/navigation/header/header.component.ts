@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   @Output() public sidenavToggle = new EventEmitter();
 
   title: string;
+  name = 'iTea Dev';
 
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
