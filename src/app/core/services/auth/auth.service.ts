@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
@@ -80,7 +79,7 @@ export class AuthService {
     return this.authenticationState.value;
   }
 
-  get authenticationStateObs() {
+  getAuthenticationState(): Observable<boolean> {
     return this.authenticationState.asObservable();
   }
 
