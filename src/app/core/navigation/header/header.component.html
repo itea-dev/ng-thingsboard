@@ -1,6 +1,7 @@
 <mat-toolbar color="primary">
   <div fxHide.gt-xs>
-    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="onToggleSidenav()">
+    <button *ngIf="isHandset$ | async" type="button" aria-label="Toggle sidenav" mat-icon-button
+      (click)="onToggleSidenav()">
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
   </div>

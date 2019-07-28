@@ -1,5 +1,5 @@
 <app-layout>
-  <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-container *ngIf="isAuthenticated$| async; else notLogged" class="sidenav-container">
     <mat-sidenav #sidenav class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
@@ -8,6 +8,7 @@
       </mat-toolbar>
       <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
     </mat-sidenav>
+
     <mat-sidenav-content>
       <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
       <main>
@@ -19,4 +20,18 @@
       </main>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
+  <ng-template #notLogged>
+    <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav-content>
+        <main>
+          <div fxLayout="row wrap" fxLayoutAlign="center center" class="layout-wrapper">
+            <div fxFlex="80%" fxFlex.lt-md="90%" fxFlex.lt-sm="100%" class="flex-wrapper">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </main>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </ng-template>
 </app-layout>
