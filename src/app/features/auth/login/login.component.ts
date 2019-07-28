@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { AuthService } from '../../../core/services/auth/auth.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 
 @Component({
@@ -11,19 +12,16 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-
   loginForm: FormGroup;
-  hide: boolean;
-
-  showSpinner: false;
+  hidePassword = true;
+  isLoading = false;
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
-  ) {
-    this.hide = true;
-  }
+    private router: Router,
+    private matSnackBar: MatSnackBar
+  ) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -33,19 +31,24 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.authService.login(this.loginForm.value).subscribe(
-      () => {
-        alert('loggedin')
-        this.router.navigateByUrl('/home');
-      }
-    );
-  }
+    this.isLoading = true;
 
-  register() {
-    this.authService.register(this.loginForm.value).subscribe(res => {
-      // Log in the the new user automatically
-      this.authService.login(this.loginForm.value).subscribe();
-    });
+    this.authService.login(this.loginForm.value)
+      .then(
+        () => {
+          this.isLoading = false;
+          this.router.navigateByUrl('/home');
+        },
+        (error) => {
+          this.isLoading = false;
+
+          this.matSnackBar.open(error.message, 'Close', {
+            duration: 10000,
+            horizontalPosition: 'end',
+            verticalPosition: 'top'
+          });
+        }
+      );
   }
 
 }

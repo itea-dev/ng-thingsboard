@@ -23,7 +23,6 @@ export class AuthService {
     private helper: JwtHelperService
   ) {
     this.checkToken();
-    console.log(this.helper.isTokenExpired()); // true or false
   }
 
   checkToken() {
@@ -41,28 +40,35 @@ export class AuthService {
     }
   }
 
-  register(credentials) {
-    return this.http.post(`${this.url}/noauth/signup`, credentials).pipe(
-      catchError(e => {
-        console.error('Auth service register error: ' + e.error.msg);
-        throw new Error(e);
-      })
-    );
+  register(credentials: any): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      this.http.post(`${this.url}/noauth/signup`, credentials)
+        .subscribe(
+          res => {
+            resolve(res);
+          },
+          e => {
+            reject(e.error);
+          }
+        );
+    });
   }
 
-  login(credentials) {
-    return this.http.post(`${this.url}/auth/login`, credentials)
-      .pipe(
-        tap(res => {
-          localStorage.setItem(TOKEN_KEY, res['token']);
-          this.user = this.helper.decodeToken(res['token']);
-          this.authenticationState.next(true);
-        }),
-        catchError(e => {
-          console.error('Auth service login error: ' + e.error.msg);
-          throw new Error(e);
-        })
-      );
+  login(credentials: { username: string, password: string }): Promise<void | any> {
+    return new Promise<void | any>((resolve, reject) => {
+      this.http.post(`${this.url}/auth/login`, credentials)
+        .subscribe(
+          res => {
+            localStorage.setItem(TOKEN_KEY, res['token']);
+            this.user = this.helper.decodeToken(res['token']);
+            this.authenticationState.next(true);
+            resolve();
+          },
+          e => {
+            reject(e.error);
+          }
+        );
+    });
   }
 
   logout() {
@@ -70,12 +76,12 @@ export class AuthService {
     this.authenticationState.next(false);
   }
 
-  getSpecialData() {
-    return this.http.get<any>(`${this.url}/api/auth/login`);
+  isAuthenticated(): boolean {
+    return this.authenticationState.value;
   }
 
-  isAuthenticated() {
-    return this.authenticationState.value;
+  get authenticationStateObs() {
+    return this.authenticationState.asObservable();
   }
 
 }

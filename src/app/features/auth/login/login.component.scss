@@ -1,12 +1,46 @@
-mat-card {
-  margin: 50px auto;
-  padding: 25px;
+#login-form {
+  padding-left: 10%;
+  padding-right: 10%;
 
-  mat-form-field {
-    width: 100%;
-  }
+  mat-card {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 25px;
 
-  mat-card-actions {
-    text-align: center;
+    mat-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 10px;
+
+      mat-card-title .mat-card-image {
+        width: 0 auto;
+        height: 60px;
+      }
+
+      mat-card-subtitle {
+        margin-bottom: 25px;
+      }
+    }
+
+    mat-card-content {
+      mat-form-field {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      button {
+        width: 50%;
+        margin: 0 25%;
+      }
+    }
+
+    mat-card-actions {
+      text-align: center;
+
+      mat-progress-bar {
+        margin: 15px 0;
+      }
+    }
   }
 }
