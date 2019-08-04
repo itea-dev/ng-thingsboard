@@ -1,0 +1,64 @@
+<section id="registration-form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <img mat-card-image src="/assets/thingsboard-logo.svg" alt="Logo">
+      </mat-card-title>
+      <mat-card-subtitle>
+        Create your personal account on the live demo server.<br />
+        It is totally free!
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form *ngIf="registrationForm" [formGroup]="registrationForm" (ngSubmit)="register()">
+        <mat-form-field appearance="outline">
+          <mat-label>First name</mat-label>
+          <input matInput formControlName="firstName" placeholder="Enter your first name" name="firstName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Last name</mat-label>
+          <input matInput formControlName="lastName" placeholder="Enter your last name" name="lastName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <mat-icon matPrefix>mail</mat-icon>
+          <input matInput formControlName="email" placeholder="Enter your email" name="username" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input matInput formControlName="password" placeholder="Create a password" type="password" name="password"
+            required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Repeat password</mat-label>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input matInput formControlName="confirmPassword" placeholder="Repeat your password" type="password"
+            name="password" required>
+          <mat-hint *ngIf="passwordMatch">Passwords don't match</mat-hint>
+        </mat-form-field>
+
+        <div class="mat-checkbox">
+          <mat-checkbox formControlName="acceptPrivacyPolicy">
+            Accept <a routerLink="/privacy-policy">Privacy Policy</a>
+          </mat-checkbox>
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">Sign up</button>
+      </form>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <span>Already have an account?</span>
+      <button mat-raised-button routerLink="/login">Login!</button>
+
+      <mat-progress-bar *ngIf="isLoading" color="primary" mode="indeterminate"> </mat-progress-bar>
+    </mat-card-actions>
+  </mat-card>
+</section>
