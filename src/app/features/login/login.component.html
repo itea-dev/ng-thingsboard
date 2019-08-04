@@ -1,0 +1,41 @@
+<section id="login-form">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <img mat-card-image src="/assets/thingsboard-logo.svg" alt="Logo">
+      </mat-card-title>
+      <mat-card-subtitle>Log in to see ThingsBoard in action.</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <mat-icon matPrefix>mail</mat-icon>
+          <input matInput formControlName="username" placeholder="Email" name="username" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input *ngIf="hidePassword" matInput formControlName="password" placeholder="Password" type="password"
+            name="password" required>
+          <input *ngIf="!hidePassword" matInput formControlName="password" placeholder="Password" type="text"
+            name="password" required>
+          <mat-icon matSuffix (click)="hidePassword = !hidePassword">
+            {{ hidePassword ? 'visibility_off' : 'visibility' }}
+          </mat-icon>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <span>Don't have an account?</span>
+      <button mat-raised-button routerLink="/signup">Create one now!</button>
+
+      <mat-progress-bar *ngIf="isLoading" color="primary" mode="indeterminate"> </mat-progress-bar>
+    </mat-card-actions>
+  </mat-card>
+</section>
