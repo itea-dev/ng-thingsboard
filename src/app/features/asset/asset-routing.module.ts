@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AssetsComponent } from './assets.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: AssetsComponent, pathMatch: 'full' },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
