@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', loadChildren: () => import(`./features/login/login.module`).then(m => m.LoginModule) },
   { path: 'signup', loadChildren: () => import(`./features/registration/registration.module`).then(m => m.RegistrationModule) },
-  { path: 'home', loadChildren: () => import(`./features/home/home.module`).then(m => m.HomeModule) },
+  { path: 'home', loadChildren: () => import(`./features/dashboard/dashboard.module`).then(m => m.DashboardModule) },
   { path: 'device', loadChildren: () => import(`./features/device/device.module`).then(m => m.DeviceModule) },
   { path: 'asset', loadChildren: () => import(`./features/asset/asset.module`).then(m => m.AssetModule) },
   { path: 'customer', loadChildren: () => import(`./features/customer/customer.module`).then(m => m.CustomerModule) },
