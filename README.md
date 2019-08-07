@@ -6,6 +6,15 @@ The goal of this project is to create an alternative pwa for the Thingsboard IoT
 ![Screenshot 1](login-page.png)
 
 
+## Roadmap
+
+* [x]  Basic layout (Header & Side navigation bar)
+* [x]  Login page
+* [x]  Registration page
+* [ ]  Home / Dashboard page
+* [ ]  Protected routes
+
+
 ## Prerequisites
 
 - Install Node.js (and npm)
