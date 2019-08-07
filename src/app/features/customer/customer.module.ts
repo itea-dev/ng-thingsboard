@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CustomerRoutingModule } from './customer-routing.module';
+import { CustomersComponent } from './customers.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [CustomersComponent],
   imports: [
     CommonModule,
     CustomerRoutingModule
