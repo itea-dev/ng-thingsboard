@@ -15,14 +15,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   ],
   imports: [
     CommonModule,
-    SharedModule,
-    FlexLayoutModule
+    SharedModule
   ],
   exports: [
     LayoutComponent,
     HeaderComponent,
-    SidenavListComponent,
-    FlexLayoutModule
+    SidenavListComponent
   ]
 })
 export class CoreModule { }

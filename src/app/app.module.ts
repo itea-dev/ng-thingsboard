@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { ScrollingModule } from '@angular/cdk/scrolling';
@@ -46,7 +45,6 @@ export function jwtOptionsFactory() {
     DragDropModule,
     ScrollingModule,
     LayoutModule,
-    FlexLayoutModule,
     HttpClientModule,
     JwtModule.forRoot({
       jwtOptionsProvider: {

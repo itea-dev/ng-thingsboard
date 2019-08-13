@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AvatarModule } from 'ngx-avatar';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [],
@@ -13,13 +14,15 @@ import { RouterModule } from '@angular/router';
     AngularMaterialModule,
     ReactiveFormsModule,
     AvatarModule,
-    RouterModule
+    RouterModule,
+    FlexLayoutModule
   ],
   exports: [
     AngularMaterialModule,
     ReactiveFormsModule,
     AvatarModule,
-    RouterModule
+    RouterModule,
+    FlexLayoutModule
   ]
 })
 export class SharedModule { }
