@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/app.service';
+
 
 @Component({
   selector: 'app-assets',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssetsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private appService: AppService
+  ) { }
 
   ngOnInit() {
+    this.appService.setTitle('Assets');
   }
 
 }
