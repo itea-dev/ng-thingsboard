@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthService } from '../../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -24,7 +25,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -37,6 +39,7 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+    this.router.navigateByUrl('login');
   }
 
 }
