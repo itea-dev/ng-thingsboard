@@ -4,6 +4,7 @@ import { AngularMaterialModule } from './angular-material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AvatarModule } from 'ngx-avatar';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [],
@@ -11,12 +12,14 @@ import { AvatarModule } from 'ngx-avatar';
     CommonModule,
     AngularMaterialModule,
     ReactiveFormsModule,
-    AvatarModule
+    AvatarModule,
+    RouterModule
   ],
   exports: [
     AngularMaterialModule,
     ReactiveFormsModule,
-    AvatarModule
+    AvatarModule,
+    RouterModule
   ]
 })
 export class SharedModule { }
