@@ -24,7 +24,8 @@ export function jwtOptionsFactory() {
     tokenGetter: () => {
       return localStorage.getItem('access_token');
     },
-    whitelistedDomains: ['demo.thingsboard.io', 'cloud.thingsboard.io', 'localhost:4200']
+    whitelistedDomains: ['demo.thingsboard.io', 'cloud.thingsboard.io', 'localhost:4200'],
+    headerName: 'X-Authorization'
   };
 }
 
