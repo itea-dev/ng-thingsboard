@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/app.service';
+
 
 @Component({
   selector: 'app-header',
@@ -12,10 +14,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() public sidenavToggle = new EventEmitter();
-
+  @Output() sidenavToggle = new EventEmitter();
   title: string;
-  name = 'iTea Dev';
 
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
@@ -26,14 +26,17 @@ export class HeaderComponent implements OnInit {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private appService: AppService
   ) { }
 
   ngOnInit() {
-    this.title = document.title;
+    this.appService.getTitle().subscribe(
+      appTitle => this.title = appTitle
+    );
   }
 
-  public onToggleSidenav = () => {
+  onToggleSidenav = () => {
     this.sidenavToggle.emit();
   }
 

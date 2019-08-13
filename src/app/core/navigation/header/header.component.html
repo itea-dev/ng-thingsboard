@@ -1,23 +1,48 @@
 <mat-toolbar color="primary">
-  <div fxHide.gt-xs>
+  <div fxHide.gt-md>
     <button *ngIf="isHandset$ | async" type="button" aria-label="Toggle sidenav" mat-icon-button
       (click)="onToggleSidenav()">
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
   </div>
 
-  <div class="fill-space">
-    <span>{{title}}</span>
+  <div class="header-title">
+    {{title}}
   </div>
 
-  <ngx-avatar [name]="name" size="40"></ngx-avatar>
+  <span class="header-spacer"></span>
 
-  <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon>more_vert</mat-icon>
+  <button mat-icon-button>
+    <mat-icon>search</mat-icon>
   </button>
-  <mat-menu #menu="matMenu" width="4">
-    <button mat-menu-item routerLink="/profile">
-      <mat-icon>account_circle</mat-icon>
+
+  <div fxHide.lt-md>
+    <button mat-icon-button>
+      <mat-icon>fullscreen</mat-icon>
+    </button>
+
+    <button mat-icon-button [matMenuTriggerFor]="language">
+      <mat-icon>language</mat-icon>
+    </button>
+    <mat-menu #language="matMenu">
+      <button mat-menu-item>
+        <span>English</span>
+      </button>
+      <button mat-menu-item>
+        <span>Arabic</span>
+      </button>
+      <button mat-menu-item>
+        <span>Spanish</span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <button mat-icon-button [matMenuTriggerFor]="profile">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #profile="matMenu">
+    <button mat-menu-item [routerLink]="[ '/profile']">
+      <mat-icon>person</mat-icon>
       <span>Profile</span>
     </button>
     <button (click)="logout()" mat-menu-item>
