@@ -13,9 +13,9 @@ const TOKEN_KEY = 'access_token';
 })
 export class AuthService {
 
-  url = environment.apiUrl;
-  user = null;
-  authenticationState = new BehaviorSubject(false);
+  private url = environment.apiUrl;
+  private user = null;
+  private authenticationState = new BehaviorSubject(false);
 
   constructor(
     private http: HttpClient,
