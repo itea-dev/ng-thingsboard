@@ -1,1 +1,30 @@
-<p>devices works!</p>
+<div class="container">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+    <ng-container *ngFor="let device of (devices | async)">
+      <mat-card class="card" fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-lg="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+        <mat-card-header>
+          <mat-card-title>{{device.name}}</mat-card-title>
+          <mat-card-subtitle>{{device.id.entityType | uppercase}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{device.additionalInfo?.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <span class="spacer"> </span>
+          <button mat-icon-button>
+            <mat-icon color="primary">share</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon color="primary">assignment_ind</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon color="primary">security</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon color="primary">delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>
