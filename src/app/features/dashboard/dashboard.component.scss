@@ -1,31 +1,14 @@
-.grid-container {
-  margin: 20px;
-}
+.card {
+  .mat-card-content {
+    text-align: center;
 
-.dashboard-card {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-}
-
-.more-button {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-}
-
-.dashboard-card-content {
-  text-align: center;
-  display: grid;
-  grid-template-columns: auto;
-
-  .card-tile {
-    mat-icon {
-      width: 100%;
-      height: 100%;
-      font-size: 90px;
+    .card-tile {
+      .mat-icon {
+        margin: auto 0;
+        width: 100%;
+        font-size: 90px;
+        margin: 0 auto;
+      }
     }
   }
 }

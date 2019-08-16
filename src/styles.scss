@@ -7,3 +7,44 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.container {
+  margin: 20px;
+}
+
+.card {
+  max-width: 100%;
+  max-height: 100%;
+  margin-bottom: 20px;
+  height: 200px;
+  overflow: visible;
+  z-index: 1;
+
+  .mat-card-header {
+    .mat-card-header-text {
+      margin: 0;
+    }
+
+    .more-button {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+    }
+  }
+
+  .mat-card-content {
+    text-align: start;
+    font-size: 13px;
+  .card-description{
+    max-height: 40px;
+  }
+  }
+
+  .mat-card-actions {
+    display: flex;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
