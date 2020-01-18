@@ -14,7 +14,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
-import { HttpClientModule } from '@angular/common/http';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 
@@ -53,7 +55,9 @@ export function jwtOptionsFactory() {
       }
     })
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
