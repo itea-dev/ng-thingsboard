@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment as env } from 'src/environments/environment';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
-
+const API_URL = env.apiUrl;
 const TOKEN_KEY = 'access_token';
 
 export interface DecodedToken {
@@ -28,7 +28,6 @@ export interface DecodedToken {
 })
 export class AuthService {
 
-  private url = environment.apiUrl;
   private decodedToken: DecodedToken = null;
   private authenticationState = new BehaviorSubject(false);
 
@@ -56,7 +55,7 @@ export class AuthService {
 
   register(credentials: any): Promise<any> {
     return new Promise<any>((resolve, reject) => {
-      this.http.post(`${this.url}/noauth/signup`, credentials)
+      this.http.post(`${API_URL}/noauth/signup`, credentials)
         .subscribe(
           res => {
             resolve(res);
@@ -70,7 +69,7 @@ export class AuthService {
 
   login(credentials: { username: string, password: string }): Promise<DecodedToken | any> {
     return new Promise<void | any>((resolve, reject) => {
-      this.http.post(`${this.url}/auth/login`, credentials)
+      this.http.post(`${API_URL}/auth/login`, credentials)
         .subscribe(
           res => {
             localStorage.setItem(TOKEN_KEY, res['token']);
