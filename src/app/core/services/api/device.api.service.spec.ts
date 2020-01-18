@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DeviceService } from './device.service';
+import { DeviceApiService } from './device.api.service';
 
 describe('DeviceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: DeviceService = TestBed.get(DeviceService);
+    const service: DeviceApiService = TestBed.get(DeviceApiService);
     expect(service).toBeTruthy();
   });
 });

@@ -8,7 +8,7 @@ import { createHttpParams } from '../http-params';
 @Injectable({
   providedIn: 'root'
 })
-export class DeviceService {
+export class DeviceApiService {
 
   private apiUril = environment.apiUrl;
 
