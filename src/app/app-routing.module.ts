@@ -6,11 +6,12 @@ import { AuthGuard } from './core/guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
-    path: 'login', loadChildren: () => import(`./features/login/login.module`).then(m => m.LoginModule)
+    path: 'login',
+    loadChildren: () => import(`./features/login/login.module`).then(m => m.LoginModule)
   },
   {
     path: 'signup',
@@ -35,6 +36,10 @@ const routes: Routes = [
     path: 'customers',
     loadChildren: () => import(`./features/customer/customer.module`).then(m => m.CustomerModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 
