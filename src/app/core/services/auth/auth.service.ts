@@ -7,6 +7,21 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 
 const TOKEN_KEY = 'access_token';
 
+export interface DecodedToken {
+  customerId: string;
+  enabled: boolean;
+  exp: number;
+  firstName: string;
+  iat: number;
+  isPublic: boolean;
+  iss: string;
+  lastName: string;
+  privacyPolicyAccepted: boolean;
+  scopes: string; // "TENANT_ADMIN"
+  sub: string;
+  tenantId: string;
+  userId: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +29,7 @@ const TOKEN_KEY = 'access_token';
 export class AuthService {
 
   private url = environment.apiUrl;
-  private user = null;
+  private decodedToken: DecodedToken = null;
   private authenticationState = new BehaviorSubject(false);
 
   constructor(
@@ -31,7 +46,7 @@ export class AuthService {
       const isExpired = this.helper.isTokenExpired(token);
 
       if (!isExpired) {
-        this.user = decoded;
+        this.decodedToken = decoded;
         this.authenticationState.next(true);
       } else {
         localStorage.removeItem(TOKEN_KEY);
@@ -53,15 +68,15 @@ export class AuthService {
     });
   }
 
-  login(credentials: { username: string, password: string }): Promise<void | any> {
+  login(credentials: { username: string, password: string }): Promise<DecodedToken | any> {
     return new Promise<void | any>((resolve, reject) => {
       this.http.post(`${this.url}/auth/login`, credentials)
         .subscribe(
           res => {
             localStorage.setItem(TOKEN_KEY, res['token']);
-            this.user = this.helper.decodeToken(res['token']);
+            this.decodedToken = this.helper.decodeToken(res['token']);
             this.authenticationState.next(true);
-            resolve();
+            resolve(this.decodedToken);
           },
           e => {
             reject(e.error);
