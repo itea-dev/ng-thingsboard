@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/app.service';
-import { DeviceService } from 'src/app/core/services/api/device.service';
+import { DeviceApiService } from 'src/app/core/services/api/device.api.service';
 import { Device } from 'src/app/models/device.model';
 
 
@@ -15,7 +15,7 @@ export class DevicesComponent implements OnInit {
 
   constructor(
     private appService: AppService,
-    private deviceService: DeviceService
+    private deviceService: DeviceApiService
   ) { }
 
   ngOnInit() {
