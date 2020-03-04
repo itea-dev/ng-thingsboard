@@ -38,7 +38,7 @@ export class AuthService {
     this.checkToken();
   }
 
-  checkToken() {
+  private checkToken() {
     const token = localStorage.getItem(TOKEN_KEY);
     if (token) {
       const decoded = this.helper.decodeToken(token);

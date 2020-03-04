@@ -19,19 +19,38 @@ export class ErrorInterceptor implements HttpInterceptor {
   ) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request).pipe(
-      tap({
-        error: err => {
-          if (err.status === 401) {
-            // Auto logout if api returns a 401 status
-            this.authService.logout();
-            this.router.navigateByUrl('login');
-          }
+    return next.handle(request)
+      .pipe(
+        tap({
+          error: error => {
+            // TODO: Log error
+            // console.error('ErrorInterceptor', err.error)
 
-          // Log error
-          // console.error('ErrorInterceptor', err.error)
-        }
-      })
-    );
+            // TODO: Show toast notification
+
+            switch (error.status) {
+              case 401: {
+                this.error401Handler();
+                break;
+              }
+              default: {
+                break;
+              }
+            }
+          }
+        })
+
+        /* catchError(error => {
+          // Handle error
+          return throwError(error)
+        }), */
+      );
   }
+
+  error401Handler() {
+    // Auto logout if 401 response returned from api
+    this.authService.logout();
+    this.router.navigateByUrl('login');
+  }
+
 }
