@@ -18,6 +18,8 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 export function jwtOptionsFactory() {
@@ -53,7 +55,8 @@ export function jwtOptionsFactory() {
         provide: JWT_OPTIONS,
         useFactory: jwtOptionsFactory,
       }
-    })
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
