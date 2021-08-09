@@ -90,7 +90,7 @@ export class AngularMaterialModule {
     // matIconRegistry.registerFontClassAlias('fontawesome', 'fa');
   }
 
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<AngularMaterialModule> {
     return {
       ngModule: AngularMaterialModule,
       providers: [MatIconRegistry]
