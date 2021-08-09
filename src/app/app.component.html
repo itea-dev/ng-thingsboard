@@ -4,7 +4,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
       <mat-toolbar color="primary">
-        <img src="http://demo.thingsboard.io/static/36f68b2b2bfda81b4a46fcd2d6f8dead.svg" alt="Logo">
+        <img src="https://demo.thingsboard.io/assets/logo_title_white.svg" alt="Logo">
       </mat-toolbar>
       <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
     </mat-sidenav>

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://demo.thingsboard.io/api'
+  apiUrl: 'https://demo.thingsboard.io/api'
 };
