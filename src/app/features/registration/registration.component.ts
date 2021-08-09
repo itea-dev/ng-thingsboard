@@ -14,7 +14,7 @@ import { SignupRequest } from './signup-request.model';
 })
 export class RegistrationComponent implements OnInit {
 
-  registrationForm: FormGroup;
+  registrationForm!: FormGroup;
   hidePassword = true;
   isLoading = false;
 
@@ -67,9 +67,11 @@ export class RegistrationComponent implements OnInit {
   }
 
   get passwordMatch(): boolean {
-    if (this.registrationForm.get('confirmPassword').errors) {
-      return this.registrationForm.get('confirmPassword').errors.NoPassswordMatch;
+    if (this.registrationForm.get('confirmPassword')!.errors) {
+      return this.registrationForm.get('confirmPassword')!.errors!.NoPassswordMatch;
     }
+
+   return false;
   }
 
   register() {

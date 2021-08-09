@@ -4,7 +4,7 @@
       <mat-card class="card" fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-lg="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
         <mat-card-header>
           <mat-card-title>{{device.name}}</mat-card-title>
-          <mat-card-subtitle>{{device.id.entityType | uppercase}}</mat-card-subtitle>
+          <mat-card-subtitle>{{device.id?.entityType | uppercase}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <p>{{device.additionalInfo?.description}}</p>

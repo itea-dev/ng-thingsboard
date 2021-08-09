@@ -11,7 +11,7 @@ import { Device } from 'src/app/models/device.model';
 })
 export class DevicesComponent implements OnInit {
 
-  devices: Promise<Device[]>;
+  devices!: Promise<Device[]>;
 
   constructor(
     private appService: AppService,
