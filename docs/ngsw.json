@@ -1,35 +1,29 @@
 {
   "configVersion": 1,
-  "timestamp": 1628541977949,
+  "timestamp": 1628546598436,
   "index": "https://itea-dev.github.io/ng-thingsboard/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
       "urls": [
-        "https://itea-dev.github.io/ng-thingsboard/10-es2015.ff2d80723235df10521c.js",
-        "https://itea-dev.github.io/ng-thingsboard/10-es5.ff2d80723235df10521c.js",
-        "https://itea-dev.github.io/ng-thingsboard/5-es2015.53d774607e956a4f7a02.js",
-        "https://itea-dev.github.io/ng-thingsboard/5-es5.53d774607e956a4f7a02.js",
-        "https://itea-dev.github.io/ng-thingsboard/6-es2015.6c6a4f905182da711352.js",
-        "https://itea-dev.github.io/ng-thingsboard/6-es5.6c6a4f905182da711352.js",
-        "https://itea-dev.github.io/ng-thingsboard/7-es2015.bb0e6b5d11fc8678de4e.js",
-        "https://itea-dev.github.io/ng-thingsboard/7-es5.bb0e6b5d11fc8678de4e.js",
-        "https://itea-dev.github.io/ng-thingsboard/8-es2015.96ca37b43f88678956fa.js",
-        "https://itea-dev.github.io/ng-thingsboard/8-es5.96ca37b43f88678956fa.js",
-        "https://itea-dev.github.io/ng-thingsboard/9-es2015.85040c0fa95d5438b982.js",
-        "https://itea-dev.github.io/ng-thingsboard/9-es5.85040c0fa95d5438b982.js",
+        "https://itea-dev.github.io/ng-thingsboard/162.aad42a0bdaef53da26d0.js",
+        "https://itea-dev.github.io/ng-thingsboard/285.6decc231edb65610a6ad.js",
+        "https://itea-dev.github.io/ng-thingsboard/341.fad0ba87b1a361ff8065.js",
+        "https://itea-dev.github.io/ng-thingsboard/560.6d41c5bdab54a38ed347.js",
+        "https://itea-dev.github.io/ng-thingsboard/615.3e11cbfa28b47701b01a.js",
+        "https://itea-dev.github.io/ng-thingsboard/714.bd9ef0f157aa6e5646f0.js",
         "https://itea-dev.github.io/ng-thingsboard/favicon.ico",
         "https://itea-dev.github.io/ng-thingsboard/index.html",
-        "https://itea-dev.github.io/ng-thingsboard/main-es2015.51a30e46ed264a1746d6.js",
-        "https://itea-dev.github.io/ng-thingsboard/main-es5.51a30e46ed264a1746d6.js",
+        "https://itea-dev.github.io/ng-thingsboard/main.0899f965eaa514a5455f.js",
         "https://itea-dev.github.io/ng-thingsboard/manifest.webmanifest",
-        "https://itea-dev.github.io/ng-thingsboard/polyfills-es2015.09ee2f719bd21ab5c7b1.js",
-        "https://itea-dev.github.io/ng-thingsboard/polyfills-es5.12b5c32d1603e35dd556.js",
-        "https://itea-dev.github.io/ng-thingsboard/runtime-es2015.c376bdf47854039b75d6.js",
-        "https://itea-dev.github.io/ng-thingsboard/runtime-es5.c376bdf47854039b75d6.js",
-        "https://itea-dev.github.io/ng-thingsboard/styles.a3a0cc00b546f6bc60ca.css"
+        "https://itea-dev.github.io/ng-thingsboard/polyfills.00ef0edc6096bd894ed5.js",
+        "https://itea-dev.github.io/ng-thingsboard/runtime.04e9d99d6e2824769458.js",
+        "https://itea-dev.github.io/ng-thingsboard/styles.bfc4663e829fd9fe4ac9.css"
       ],
       "patterns": []
     },
@@ -37,6 +31,9 @@
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
       "urls": [
         "https://itea-dev.github.io/ng-thingsboard/assets/icons/icon-128x128.png",
         "https://itea-dev.github.io/ng-thingsboard/assets/icons/icon-144x144.png",
@@ -53,18 +50,12 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://itea-dev.github.io/ng-thingsboard/10-es2015.ff2d80723235df10521c.js": "41d20ebadbc11f73094fc68b8565017d17fbffed",
-    "https://itea-dev.github.io/ng-thingsboard/10-es5.ff2d80723235df10521c.js": "1057a7277803d35c64b0e86a61c211e6e92eb91f",
-    "https://itea-dev.github.io/ng-thingsboard/5-es2015.53d774607e956a4f7a02.js": "71f3ddfd400acf6e39b01487f737958146e83ee0",
-    "https://itea-dev.github.io/ng-thingsboard/5-es5.53d774607e956a4f7a02.js": "faadd7d7ce4a1ff3f5aced4a60f92f212f983248",
-    "https://itea-dev.github.io/ng-thingsboard/6-es2015.6c6a4f905182da711352.js": "906ef33772f1f370502bf29675591a51688e8b04",
-    "https://itea-dev.github.io/ng-thingsboard/6-es5.6c6a4f905182da711352.js": "b2696c6d91775bc0763d862f5ace379072bdba24",
-    "https://itea-dev.github.io/ng-thingsboard/7-es2015.bb0e6b5d11fc8678de4e.js": "de74c1d81ff7f840cad01d7d6bb791b5423a80ee",
-    "https://itea-dev.github.io/ng-thingsboard/7-es5.bb0e6b5d11fc8678de4e.js": "baf8bb82b5871b6236542816b3c5111488c75ccf",
-    "https://itea-dev.github.io/ng-thingsboard/8-es2015.96ca37b43f88678956fa.js": "dc3fdd4395e108b4ab727ebe272220527a143bad",
-    "https://itea-dev.github.io/ng-thingsboard/8-es5.96ca37b43f88678956fa.js": "f2897c0af46230a33e61f78af5d7ff8c56cc829b",
-    "https://itea-dev.github.io/ng-thingsboard/9-es2015.85040c0fa95d5438b982.js": "254094da19d9cb63fb13cb946029741dca6e0fd2",
-    "https://itea-dev.github.io/ng-thingsboard/9-es5.85040c0fa95d5438b982.js": "d8b817d0c3fe21fee583776603b65a4e0d994ac0",
+    "https://itea-dev.github.io/ng-thingsboard/162.aad42a0bdaef53da26d0.js": "88b695ade375630708307ec6b4ac4a2aebb77756",
+    "https://itea-dev.github.io/ng-thingsboard/285.6decc231edb65610a6ad.js": "49095db25cc26c766074cb5c16dd28ad338591d8",
+    "https://itea-dev.github.io/ng-thingsboard/341.fad0ba87b1a361ff8065.js": "5e2df37d6f3a4a5e019c6619996b337359cb98a4",
+    "https://itea-dev.github.io/ng-thingsboard/560.6d41c5bdab54a38ed347.js": "613cc861b1772b99bf0f702222588d110835005f",
+    "https://itea-dev.github.io/ng-thingsboard/615.3e11cbfa28b47701b01a.js": "e37af6a48164becace983db52586bd67cc6db460",
+    "https://itea-dev.github.io/ng-thingsboard/714.bd9ef0f157aa6e5646f0.js": "4828a6120145145adc26363578aee1fd23d11231",
     "https://itea-dev.github.io/ng-thingsboard/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "https://itea-dev.github.io/ng-thingsboard/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "https://itea-dev.github.io/ng-thingsboard/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -75,15 +66,12 @@
     "https://itea-dev.github.io/ng-thingsboard/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://itea-dev.github.io/ng-thingsboard/assets/thingsboard-logo.svg": "c7cf51e9b498dc9b2595280ed4ba34d2754e0e99",
     "https://itea-dev.github.io/ng-thingsboard/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://itea-dev.github.io/ng-thingsboard/index.html": "eeea92acf93ac54f9a4c0c056da9a49b2e51c1c2",
-    "https://itea-dev.github.io/ng-thingsboard/main-es2015.51a30e46ed264a1746d6.js": "a3122cd18a89c073a9929c0de82f205c69078fcc",
-    "https://itea-dev.github.io/ng-thingsboard/main-es5.51a30e46ed264a1746d6.js": "71bd458b5135e487c97e7f65e99adb1ca5cc2e57",
+    "https://itea-dev.github.io/ng-thingsboard/index.html": "c25d0d3918e6b0853522c542bfd43dac75366fbe",
+    "https://itea-dev.github.io/ng-thingsboard/main.0899f965eaa514a5455f.js": "12a47b91c3d34108a4a690742b1a342b4960f54e",
     "https://itea-dev.github.io/ng-thingsboard/manifest.webmanifest": "0a779b2571554ee1e98d4b76e732f7cc305abcfa",
-    "https://itea-dev.github.io/ng-thingsboard/polyfills-es2015.09ee2f719bd21ab5c7b1.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
-    "https://itea-dev.github.io/ng-thingsboard/polyfills-es5.12b5c32d1603e35dd556.js": "8aa26ea87b9958c6bd13b7c257c0e9940438e684",
-    "https://itea-dev.github.io/ng-thingsboard/runtime-es2015.c376bdf47854039b75d6.js": "a556c30640b66332a551fde4d317a398de2bb28e",
-    "https://itea-dev.github.io/ng-thingsboard/runtime-es5.c376bdf47854039b75d6.js": "b0cc53d06ad19efbefe2a7dfd1ec1a8f2724f0a2",
-    "https://itea-dev.github.io/ng-thingsboard/styles.a3a0cc00b546f6bc60ca.css": "bcd552b0787e0b33c4f5c429e287ac90ee8ca0f0"
+    "https://itea-dev.github.io/ng-thingsboard/polyfills.00ef0edc6096bd894ed5.js": "7545dba30b12eacf7337dbbd469a49085a19bb2e",
+    "https://itea-dev.github.io/ng-thingsboard/runtime.04e9d99d6e2824769458.js": "dbd4f19494c15e616bbe8f946986baee31b04839",
+    "https://itea-dev.github.io/ng-thingsboard/styles.bfc4663e829fd9fe4ac9.css": "4bed4f920cddb2136bc0d6f7614c3218ef03ea21"
   },
   "navigationUrls": [
     {
@@ -102,5 +90,6 @@
       "positive": false,
       "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
     }
-  ]
+  ],
+  "navigationRequestStrategy": "performance"
 }
