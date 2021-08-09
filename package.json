@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "githubpage": "ng build --prod --outputPath=docs"
+    "githubpage": "ng build --prod --outputPath=docs --base-href=https://itea-dev.github.io/ng-thingsboard/"
   },
   "private": true,
   "dependencies": {
